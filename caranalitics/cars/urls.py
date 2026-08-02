@@ -11,7 +11,7 @@ from . import views
 urlpatterns = [
     path('', views.index, name='home'),
     path('create/', views.create_car, name = 'create_car'),
-    path('update/<int:id>/', views.delete_car, name='update'),
+    path('update/<int:id>/', views.update_car, name='update'),
     path('list/', views.car_list, name='list'),
     path('delete/<int:id>/', views.delete_car, name='delete'),
     path('detail/<int:id>/', views.detail_car, name='detail'),

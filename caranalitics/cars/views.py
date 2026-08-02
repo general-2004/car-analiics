@@ -5,7 +5,7 @@ from .models import Car
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'cars/index.html')
 
 def create_car(request):
     if request.method == "POST":
@@ -19,7 +19,7 @@ def create_car(request):
         form = CarForm()
 
     return render(
-        request, 'cars/create_car.html',{
+        request, 'cars/create.html',{
         "form": form
         })
 
@@ -27,7 +27,7 @@ def car_list(request):
     cars = Car.objects.all()
 
     return render(
-        request, 'cars/list_car.html',{
+        request, 'cars/list.html',{
             "cars": cars
         }
     )
@@ -46,7 +46,7 @@ def update_car(request, id):
         form = CarForm(instance=car)
 
     return render(
-        request, 'cars/car_update.html',{
+        request, 'cars/update.html',{
             "form": form
         
         })
@@ -59,6 +59,6 @@ def delete_car(request, id):
 
 def detail_car(request, id):
     car = Car.objects.get(id=id)
-    return render(request, 'detail/detail.html',{
+    return render(request, 'cars/detail.html',{
         "car": car
     })
