@@ -15,4 +15,6 @@ urlpatterns = [
     path('list/', views.car_list, name='list'),
     path('delete/<int:id>/', views.delete_car, name='delete'),
     path('detail/<int:id>/', views.detail_car, name='detail'),
+    path('analitics/', views.car_analitics, name='analitics'),
+    path('dashboard/', views.car_dashboard, name='dashboard'),
 ]

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,12 +8,18 @@
 </head>
 <body>
     <header>
-        <h1>Car analitics</h1>
-            <a href="{% url 'list' %}">Список автівок</a>
-            <a href="{% url 'create' %}">Створити автівку</a>
-            {% if car in cars %}
-                <a href="{% url 'delete' %}">Видалити автівку</a>
-            {% endif %}
+        <div>
+            <img src="{% static 'cars/images/car.png' %}" alt="Logo">
+            <h1>CarAnalitics</h1>
+            <nav>
+                <a href="{% url 'home' %}">Головна</a>
+                <button type="button", id="search-button">Пошук</button>
+                <a href="{% url 'analitics' %}">Аналітика</a>
+                <a href="{% url 'dashboard' %}">Кабінет</a>
+                <a href="{% url 'registration' %}">Регістрація</a>
+                <a href="{% url 'login' %}">Вхід</a>
+            </nav>
+        </div>
     </header>
 </body>
 </html>

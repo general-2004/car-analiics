@@ -7,6 +7,12 @@ from .models import Car
 def index(request):
     return render(request, 'cars/index.html')
 
+def car_analitics(request):
+    return render(request, 'cars/analitics.html')
+
+def car_dashboard(request):
+    return render(request, 'cars/dashboard.html')
+
 def create_car(request):
     if request.method == "POST":
         form = CarForm(request.POST)
