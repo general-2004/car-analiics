@@ -6,6 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Car analitics</h1>
+    <header>
+        <h1>Car analitics</h1>
+            <a href="{% url 'list' %}">Список автівок</a>
+            <a href="{% url 'create' %}">Створити автівку</a>
+            {% if car in cars %}
+                <a href="{% url 'delete' %}">Видалити автівку</a>
+            {% endif %}
+    </header>
 </body>
 </html>

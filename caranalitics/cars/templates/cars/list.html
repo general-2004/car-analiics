@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div>
+            {% if cars %}
+            {% for car in cars %}
+            <h2>{{ car.brand }}</h2>
+            <h2>{{ car.name }}</h2>
+            <h2>{{ car.price }}</h2>
+
+            <a href="{% url 'detail' car.id %}">Деталі</a>
+            <a href="{% url 'update' car.id %}">Редагувати</a>
+            <a href="{% url 'delete' car.id %}">Видалити</a>
+            {% endfor %}
+
+            {% else %}
+                <h2>Наразі автівок немає</h2>
+                <a href="{% url 'create' %}">
+                    Натисніть сюди щоб створити автівку
+                </a>
+            {% endif %}
+        </div>
+    </header>
+</body>
+</html>
